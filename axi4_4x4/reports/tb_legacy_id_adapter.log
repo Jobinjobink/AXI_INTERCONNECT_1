@@ -1,0 +1,2 @@
+SOC TEST PASS: legacy adapter 41 concurrent R/W burst pairs; all ID bits and route owners; stalls, SLVERR, reset recovery
+C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_tb_legacy_id_adapter.preprocessed.sv:4620: $finish called at 5401000 (1ps)

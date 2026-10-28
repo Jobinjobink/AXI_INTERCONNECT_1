@@ -1,0 +1,82 @@
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+SOC TEST PASS: native and legacy 4x4 structs; 32 writes, 32 reads, 128 data beats each direction
+C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_tb_soc_axi4_subsystem.preprocessed.sv:4539: $finish called at 1440000 (1ps)

@@ -1,0 +1,8 @@
+# Run from the archive root with Yosys + slang.
+read_slang --ignore-initial --top soc_axi4_legacy_subsystem -D SYNTHESIS -f soc_project/filelist.f
+hierarchy -check -top soc_axi4_legacy_subsystem
+proc
+opt
+check -assert
+stat
+write_json build/soc_axi4_legacy_subsystem.json

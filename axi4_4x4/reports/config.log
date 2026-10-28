@@ -1,0 +1,34 @@
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+Addressing configuration for axi_crossbar_addr instance tb_config.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 80000000 / 12 -- 80000000-80000fff
+ 1 ( 0): 81000000 / 12 -- 81000000-81000fff
+ 2 ( 0): 82000000 / 12 -- 82000000-82000fff
+CONFIG PASS relocated-map secure-connectivity disabled-region
+C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\compile_config.preprocessed.sv:4017: $finish called at 840000 (1ps)

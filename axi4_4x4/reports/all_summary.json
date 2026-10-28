@@ -1,0 +1,774 @@
+{
+  "action": "all",
+  "status": "PASS",
+  "started_utc": "2026-10-28T05:45:29.078737+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "source_sha256": {
+    "filelist.f": "74273c6771dac68b4ff98ba1dd490296a6c7397add7515b1ecd1f96961c68d09",
+    "rtl/axi4_interconnect_4x4.sv": "0e720fcf1c8dc295da630232f43b3255be608e702bbc6a25551df068197d93fc",
+    "rtl/axi_write_owner_table.sv": "d57a619b309234ce2d9b3f2f89a7a3017e1c679db4b01c6e5b236575a674126f",
+    "rtl/vendor/verilog_axi/arbiter.v": "a001507c82843e36e133dea75491fc044f56660fac0aff0127cf3afec7f927e0",
+    "rtl/vendor/verilog_axi/axi_crossbar.v": "372942b6676159ce6bc7ef6ab60612abc0a091d4d2231e81ff8f47b1b834a8b5",
+    "rtl/vendor/verilog_axi/axi_crossbar_addr.v": "9ec313281183408687084c4013976ea13544688412b64b6f7386fd604ad3f59d",
+    "rtl/vendor/verilog_axi/axi_crossbar_rd.v": "a484cdc39cdf43b31c8187733690e17d09258889419bf1d12ed2cfa57237a864",
+    "rtl/vendor/verilog_axi/axi_crossbar_wr.v": "2ea59eaee1a4d7d6e5822bbb641c60d0babeb0a17ffe710314cd738c9a449007",
+    "rtl/vendor/verilog_axi/axi_register_rd.v": "350df4fe565b969b3b650be4a09ab0c05eb5b425802efdc0cab24bb531e263b8",
+    "rtl/vendor/verilog_axi/axi_register_wr.v": "d3ae2d2ebbf0c969cfb4b5218e2faf403cb84132ff301db4fa1d70c69017e3f3",
+    "rtl/vendor/verilog_axi/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "scripts/audit_sources.py": "bab4c1adaebe9afdb7d29f8cd750f9e49a74d897513c6428995d796e7d62fe0b",
+    "scripts/package.py": "47c9563b923d4a2698dc36a0054ca6ac3e6458900d8bc5d8975009ef2006ad69",
+    "scripts/questa.do": "6a5f399b746f60d90162d3c7255a26da167fad0a934d59906e36987743b8e97f",
+    "scripts/run.py": "2de70d46db74f30840912aaa4801d27f2fc1785e1f5a93ad65d05d2841c1c913",
+    "scripts/synth.ys": "7982115458036f1f75646fe349033a728f737320ddfd1a8e5434efc7699319a7",
+    "soc_project/axi/rtl/axi4_legacy_id_adapter.sv": "7244388b29a1af9c42237f6db5fadc078f8d0bf775924f8abf00df49d244e800",
+    "soc_project/axi/rtl/axi4_struct_crossbar.sv": "8f0f2c429f78168c69b5731403e4ccdbe75bc614fa41461e0ab4fd817a710668",
+    "soc_project/common/rtl/axi_pkg.sv": "d16f29e862cbb51ceaa6235d5e8ee363971ae67c9f8e3b342f17ca7f0b61cbe7",
+    "soc_project/common/rtl/soc_address_map_pkg.sv": "7b46044da8f9d982ad0d454544da19354b91e7e893b68fd2cac0d548e56d2c80",
+    "soc_project/filelist.f": "7c84214c3d601fc2d8d3a49fb956985b7637997581d30d00c61b55597c76d7a4",
+    "soc_project/scripts/run.py": "0fc7c7d39a18cbc641519f357d523587f4e5bfe500d4df6b84d151809b83325b",
+    "soc_project/scripts/synth.ys": "6d637e909611854d033f4ceace3f06d2ad134cd39e9fcd7027172b7068560a3c",
+    "soc_project/soc_top/rtl/soc_axi4_legacy_subsystem.sv": "c34f6ae140c985933188ac7ac3c72b48082a1c4899d709a4ea276899cf6f8802",
+    "soc_project/soc_top/rtl/soc_axi4_subsystem.sv": "b7d9248b850592ff4e5cd34375f340b5f4ea951aa6391e053cfd00bc1e2c5a07",
+    "soc_project/tb/tb_legacy_id_adapter.sv": "c3d35e27bb42c6416f2ab5b41e87afa877a38c73fcb5c38b3a6cc16873525132",
+    "soc_project/tb/tb_soc_axi4_subsystem.sv": "4eff8cdf5b89df67a4596c0b1aac55d9f007b540cabea805e06e95a2c969314a",
+    "tb/axi4_owner_checker.sv": "43ca1c9785beca2864c977eaba50b988b03c7afb5e6e57db3a25128449ef04c8",
+    "tb/axi4_protocol_checker.sv": "1c89f4addfabbf8c390ce6c4543a59dc14fd2496c1956f17628cab8dec39042c",
+    "tb/axi4_test_slave.sv": "29010c921d9076c1c586f3d942e556ef1bde78ef2dd66a7e0eb734a526820e4b",
+    "tb/tb_axi4_interconnect.sv": "324a0e3f7bafa448e9cc02e8e36a44ba8b5df02b36175c8b522a3a20edd6c2ea",
+    "tb/tb_checker_negative.sv": "309cdfc8663605f9901a373aee3176f6a6e30b4db38bb610eed37e4ca96023bf",
+    "tb/tb_config.sv": "9e89a767cb581439cae1d9a4298757312fcd51608b124cbc85e46b5d1a5e8224",
+    "tb/tb_owner_checker_negative.sv": "d08cb589d9e08947932333dfa6f09a96d9be3c55b39f9cfd961a046d0ee5cccf",
+    "tb/tb_owner_table.sv": "bd721349f2f8cd3373ab2afc33353724186df60719fb4685085f6a003e290d7f"
+  },
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Admin\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "scripts/audit_sources.py",
+        "--skip-package"
+      ],
+      "seconds": 0.875,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "axi4_interconnect_4x4",
+        "-o",
+        "build/compile_default.vvp",
+        "-c",
+        "filelist.f"
+      ],
+      "seconds": 2.984,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "axi4_interconnect_4x4",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_default.preprocessed.sv",
+            "-c",
+            "filelist.f"
+          ],
+          "seconds": 0.61,
+          "exit_code": 0,
+          "log": "reports\\compile_default.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_default.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_default.preprocessed.sv"
+          ],
+          "seconds": 2.296,
+          "exit_code": 0,
+          "log": "reports\\compile_default.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\compile_default.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "axi4_interconnect_4x4",
+        "-o",
+        "build/compile_wide.vvp",
+        "-c",
+        "filelist.f",
+        "-Paxi4_interconnect_4x4.DATA_WIDTH=64",
+        "-Paxi4_interconnect_4x4.ADDR_WIDTH=40",
+        "-Paxi4_interconnect_4x4.ID_WIDTH=8"
+      ],
+      "seconds": 4.313,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "axi4_interconnect_4x4",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_wide.preprocessed.sv",
+            "-c",
+            "filelist.f",
+            "-Paxi4_interconnect_4x4.DATA_WIDTH=64",
+            "-Paxi4_interconnect_4x4.ADDR_WIDTH=40",
+            "-Paxi4_interconnect_4x4.ID_WIDTH=8"
+          ],
+          "seconds": 1.875,
+          "exit_code": 0,
+          "log": "reports\\compile_wide.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_wide.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_wide.preprocessed.sv"
+          ],
+          "seconds": 1.297,
+          "exit_code": 0,
+          "log": "reports\\compile_wide.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\compile_wide.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "axi4_interconnect_4x4",
+        "-o",
+        "build/compile_small.vvp",
+        "-c",
+        "filelist.f",
+        "-Paxi4_interconnect_4x4.THREADS=1",
+        "-Paxi4_interconnect_4x4.ACCEPT=2",
+        "-Paxi4_interconnect_4x4.ISSUE=1",
+        "-Paxi4_interconnect_4x4.ID_WIDTH=1"
+      ],
+      "seconds": 2.594,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "axi4_interconnect_4x4",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_small.preprocessed.sv",
+            "-c",
+            "filelist.f",
+            "-Paxi4_interconnect_4x4.THREADS=1",
+            "-Paxi4_interconnect_4x4.ACCEPT=2",
+            "-Paxi4_interconnect_4x4.ISSUE=1",
+            "-Paxi4_interconnect_4x4.ID_WIDTH=1"
+          ],
+          "seconds": 1.203,
+          "exit_code": 0,
+          "log": "reports\\compile_small.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_small.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_small.preprocessed.sv"
+          ],
+          "seconds": 1.266,
+          "exit_code": 0,
+          "log": "reports\\compile_small.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\compile_small.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_axi4_interconnect",
+        "-o",
+        "build/regression.vvp",
+        "-c",
+        "filelist.f",
+        "tb/axi4_owner_checker.sv",
+        "tb/axi4_protocol_checker.sv",
+        "tb/axi4_test_slave.sv",
+        "tb/tb_axi4_interconnect.sv",
+        "tb/tb_checker_negative.sv",
+        "tb/tb_config.sv",
+        "tb/tb_owner_checker_negative.sv",
+        "tb/tb_owner_table.sv"
+      ],
+      "seconds": 2.766,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "tb_axi4_interconnect",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_testbench.preprocessed.sv",
+            "-c",
+            "filelist.f",
+            "tb/axi4_owner_checker.sv",
+            "tb/axi4_protocol_checker.sv",
+            "tb/axi4_test_slave.sv",
+            "tb/tb_axi4_interconnect.sv",
+            "tb/tb_checker_negative.sv",
+            "tb/tb_config.sv",
+            "tb/tb_owner_checker_negative.sv",
+            "tb/tb_owner_table.sv"
+          ],
+          "seconds": 1.343,
+          "exit_code": 0,
+          "log": "reports\\compile_testbench.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_testbench.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_testbench.preprocessed.sv"
+          ],
+          "seconds": 1.219,
+          "exit_code": 0,
+          "log": "reports\\compile_testbench.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\regression.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/regression.vvp",
+        "+SEED=1"
+      ],
+      "seconds": 11.734,
+      "exit_code": 0,
+      "seed": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/regression.vvp",
+        "+SEED=42"
+      ],
+      "seconds": 7.688,
+      "exit_code": 0,
+      "seed": 42
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/regression.vvp",
+        "+SEED=2026"
+      ],
+      "seconds": 11.0,
+      "exit_code": 0,
+      "seed": 2026
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_axi4_interconnect",
+        "-o",
+        "build/regression_breg_1.vvp",
+        "-c",
+        "filelist.f",
+        "-Ptb_axi4_interconnect.TARGET_B_REG_TYPE=1",
+        "tb/axi4_owner_checker.sv",
+        "tb/axi4_protocol_checker.sv",
+        "tb/axi4_test_slave.sv",
+        "tb/tb_axi4_interconnect.sv",
+        "tb/tb_checker_negative.sv",
+        "tb/tb_config.sv",
+        "tb/tb_owner_checker_negative.sv",
+        "tb/tb_owner_table.sv"
+      ],
+      "seconds": 3.953,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "tb_axi4_interconnect",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_breg_1.preprocessed.sv",
+            "-c",
+            "filelist.f",
+            "-Ptb_axi4_interconnect.TARGET_B_REG_TYPE=1",
+            "tb/axi4_owner_checker.sv",
+            "tb/axi4_protocol_checker.sv",
+            "tb/axi4_test_slave.sv",
+            "tb/tb_axi4_interconnect.sv",
+            "tb/tb_checker_negative.sv",
+            "tb/tb_config.sv",
+            "tb/tb_owner_checker_negative.sv",
+            "tb/tb_owner_table.sv"
+          ],
+          "seconds": 1.187,
+          "exit_code": 0,
+          "log": "reports\\compile_breg_1.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_breg_1.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_breg_1.preprocessed.sv"
+          ],
+          "seconds": 2.063,
+          "exit_code": 0,
+          "log": "reports\\compile_breg_1.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\regression_breg_1.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/regression_breg_1.vvp",
+        "+SEED=42"
+      ],
+      "seconds": 9.938,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_axi4_interconnect",
+        "-o",
+        "build/regression_breg_2.vvp",
+        "-c",
+        "filelist.f",
+        "-Ptb_axi4_interconnect.TARGET_B_REG_TYPE=2",
+        "tb/axi4_owner_checker.sv",
+        "tb/axi4_protocol_checker.sv",
+        "tb/axi4_test_slave.sv",
+        "tb/tb_axi4_interconnect.sv",
+        "tb/tb_checker_negative.sv",
+        "tb/tb_config.sv",
+        "tb/tb_owner_checker_negative.sv",
+        "tb/tb_owner_table.sv"
+      ],
+      "seconds": 2.281,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "tb_axi4_interconnect",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_breg_2.preprocessed.sv",
+            "-c",
+            "filelist.f",
+            "-Ptb_axi4_interconnect.TARGET_B_REG_TYPE=2",
+            "tb/axi4_owner_checker.sv",
+            "tb/axi4_protocol_checker.sv",
+            "tb/axi4_test_slave.sv",
+            "tb/tb_axi4_interconnect.sv",
+            "tb/tb_checker_negative.sv",
+            "tb/tb_config.sv",
+            "tb/tb_owner_checker_negative.sv",
+            "tb/tb_owner_table.sv"
+          ],
+          "seconds": 0.75,
+          "exit_code": 0,
+          "log": "reports\\compile_breg_2.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_breg_2.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_breg_2.preprocessed.sv"
+          ],
+          "seconds": 1.422,
+          "exit_code": 0,
+          "log": "reports\\compile_breg_2.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\regression_breg_2.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/regression_breg_2.vvp",
+        "+SEED=42"
+      ],
+      "seconds": 9.093,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_owner_table",
+        "-o",
+        "build/tb_owner_table.vvp",
+        "rtl/axi_write_owner_table.sv",
+        "tb/tb_owner_table.sv"
+      ],
+      "seconds": 0.985,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-s",
+            "tb_owner_table",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_tb_owner_table.preprocessed.sv",
+            "rtl/axi_write_owner_table.sv",
+            "tb/tb_owner_table.sv"
+          ],
+          "seconds": 0.859,
+          "exit_code": 0,
+          "log": "reports\\compile_tb_owner_table.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_tb_owner_table.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_tb_owner_table.preprocessed.sv"
+          ],
+          "seconds": 0.11,
+          "exit_code": 0,
+          "log": "reports\\compile_tb_owner_table.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\tb_owner_table.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/tb_owner_table.vvp",
+        "+CASE=0"
+      ],
+      "seconds": 0.078,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_owner_checker_negative",
+        "-o",
+        "build/tb_owner_checker_negative.vvp",
+        "tb/axi4_owner_checker.sv",
+        "tb/tb_owner_checker_negative.sv"
+      ],
+      "seconds": 1.203,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-s",
+            "tb_owner_checker_negative",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_tb_owner_checker_negative.preprocessed.sv",
+            "tb/axi4_owner_checker.sv",
+            "tb/tb_owner_checker_negative.sv"
+          ],
+          "seconds": 0.469,
+          "exit_code": 0,
+          "log": "reports\\compile_tb_owner_checker_negative.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_tb_owner_checker_negative.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_tb_owner_checker_negative.preprocessed.sv"
+          ],
+          "seconds": 0.672,
+          "exit_code": 0,
+          "log": "reports\\compile_tb_owner_checker_negative.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\tb_owner_checker_negative.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/tb_owner_checker_negative.vvp",
+        "+CASE=0"
+      ],
+      "seconds": 0.156,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/tb_owner_checker_negative.vvp",
+        "+CASE=1"
+      ],
+      "expected_failure": "changed before accepted WLAST",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/tb_owner_checker_negative.vvp",
+        "+CASE=2"
+      ],
+      "expected_failure": "release without accepted WLAST",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_config",
+        "-o",
+        "build/config.vvp",
+        "-c",
+        "filelist.f",
+        "tb/tb_config.sv"
+      ],
+      "seconds": 1.843,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-s",
+            "tb_config",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_config.preprocessed.sv",
+            "-c",
+            "filelist.f",
+            "tb/tb_config.sv"
+          ],
+          "seconds": 0.453,
+          "exit_code": 0,
+          "log": "reports\\compile_config.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_config.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_config.preprocessed.sv"
+          ],
+          "seconds": 1.156,
+          "exit_code": 0,
+          "log": "reports\\compile_config.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\config.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/config.vvp"
+      ],
+      "seconds": 0.844,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-s",
+        "tb_checker_negative",
+        "-o",
+        "build/checker.vvp",
+        "tb/axi4_protocol_checker.sv",
+        "tb/tb_checker_negative.sv"
+      ],
+      "seconds": 6.422,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-s",
+            "tb_checker_negative",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_checker.preprocessed.sv",
+            "tb/axi4_protocol_checker.sv",
+            "tb/tb_checker_negative.sv"
+          ],
+          "seconds": 5.156,
+          "exit_code": 0,
+          "log": "reports\\compile_checker.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_checker.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\compile_checker.preprocessed.sv"
+          ],
+          "seconds": 0.687,
+          "exit_code": 0,
+          "log": "reports\\compile_checker.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\checker.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/checker.vvp",
+        "+CASE=0"
+      ],
+      "seconds": 0.187,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/checker.vvp",
+        "+CASE=1"
+      ],
+      "expected_failure": "burst crosses 4KB boundary",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/checker.vvp",
+        "+CASE=2"
+      ],
+      "expected_failure": "WLAST disagrees with AWLEN",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/checker.vvp",
+        "+CASE=3"
+      ],
+      "expected_failure": "AR changed while stalled",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/checker.vvp",
+        "+CASE=4"
+      ],
+      "expected_failure": "B without completed AW/W",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/checker.vvp",
+        "+CASE=5"
+      ],
+      "expected_failure": "missing WLAST at AWLEN boundary",
+      "exit_code": 1
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "soc_project/scripts/run.py",
+        "--tool-dir",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app",
+        "--yosys-dir",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-30\\referenced-chatgpt-conversation-this-is-an-2\\work\\oss-cad-suite",
+        "--direct-backend"
+      ],
+      "seconds": 22.797,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-30\\referenced-chatgpt-conversation-this-is-an-2\\work\\oss-cad-suite\\bin\\yosys.exe",
+        "-s",
+        "scripts/synth.ys"
+      ],
+      "seconds": 8.031,
+      "exit_code": 0
+    }
+  ],
+  "finished_utc": "2026-10-28T05:47:24.837663+00:00"
+}

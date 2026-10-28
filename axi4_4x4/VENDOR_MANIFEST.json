@@ -1,0 +1,90 @@
+{
+  "repository": "https://github.com/alexforencich/verilog-axi",
+  "commit": "516bd5dadc3365b7f9e225d2af8fe0b8d804fe53",
+  "license": "MIT",
+  "local_modifications": [
+    "axi_crossbar.v",
+    "axi_crossbar_addr.v",
+    "axi_crossbar_rd.v",
+    "axi_crossbar_wr.v",
+    "axi_register_rd.v",
+    "axi_register_wr.v"
+  ],
+  "files": [
+    {
+      "path": "rtl/vendor/verilog_axi/arbiter.v",
+      "sha256": "a001507c82843e36e133dea75491fc044f56660fac0aff0127cf3afec7f927e0",
+      "upstream_path": "rtl/arbiter.v",
+      "upstream_sha256": "a001507c82843e36e133dea75491fc044f56660fac0aff0127cf3afec7f927e0",
+      "modified_from_upstream": false
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar.v",
+      "sha256": "372942b6676159ce6bc7ef6ab60612abc0a091d4d2231e81ff8f47b1b834a8b5",
+      "upstream_path": "rtl/axi_crossbar.v",
+      "upstream_sha256": "f2e5177a8c8bbe4ed844554eece7abd207365a8a7a20796e0654e08362b51b3d",
+      "modified_from_upstream": true
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar_addr.v",
+      "sha256": "9ec313281183408687084c4013976ea13544688412b64b6f7386fd604ad3f59d",
+      "upstream_path": "rtl/axi_crossbar_addr.v",
+      "upstream_sha256": "5d0e1a5b885c6b271b864b64a834057496428147ce3c3ae633459251239048fb",
+      "modified_from_upstream": true
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar_rd.v",
+      "sha256": "a484cdc39cdf43b31c8187733690e17d09258889419bf1d12ed2cfa57237a864",
+      "upstream_path": "rtl/axi_crossbar_rd.v",
+      "upstream_sha256": "d42e9e3b8d94ba9e135cd3e5841ee570dce2cd15d50e7ca87621c8eca246fe98",
+      "modified_from_upstream": true
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar_wr.v",
+      "sha256": "2ea59eaee1a4d7d6e5822bbb641c60d0babeb0a17ffe710314cd738c9a449007",
+      "upstream_path": "rtl/axi_crossbar_wr.v",
+      "upstream_sha256": "0892781788371df9d3449608d342542269eb05efd0b6827fdea575d538368816",
+      "modified_from_upstream": true
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_register_rd.v",
+      "sha256": "350df4fe565b969b3b650be4a09ab0c05eb5b425802efdc0cab24bb531e263b8",
+      "upstream_path": "rtl/axi_register_rd.v",
+      "upstream_sha256": "63f1bd6f9d72ae28643fd7af3a5d5bcb05d45cbfb290c59c120c327ba49aa575",
+      "modified_from_upstream": true
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_register_wr.v",
+      "sha256": "d3ae2d2ebbf0c969cfb4b5218e2faf403cb84132ff301db4fa1d70c69017e3f3",
+      "upstream_path": "rtl/axi_register_wr.v",
+      "upstream_sha256": "02dd26f56ee04ad834a28e02ef2726852ab527fb23c3a88b377f3ce55a719c4b",
+      "modified_from_upstream": true
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/COPYING",
+      "sha256": "ba81481b2d63a33e0dce336d9e736130709549feeaf6cd424b34beba712baa50",
+      "upstream_path": "COPYING",
+      "upstream_sha256": "ba81481b2d63a33e0dce336d9e736130709549feeaf6cd424b34beba712baa50",
+      "modified_from_upstream": false
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/priority_encoder.v",
+      "sha256": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+      "upstream_path": "rtl/priority_encoder.v",
+      "upstream_sha256": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+      "modified_from_upstream": false
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/UPSTREAM_README.md",
+      "sha256": "99499ca09430eff2c4aca5ed472759e4090bf51c1dcef5e07b880f9a11fc3a61",
+      "upstream_path": "README.md",
+      "upstream_sha256": "99499ca09430eff2c4aca5ed472759e4090bf51c1dcef5e07b880f9a11fc3a61",
+      "modified_from_upstream": false
+    }
+  ],
+  "custom_dependencies": [
+    "rtl/axi_write_owner_table.sv"
+  ],
+  "patch_normalization": "Unified diff uses LF text. File sha256 values retain exact packaged bytes.",
+  "upstream_retrieved": "2026-10-26; GitHub connector; exact pinned commit raw content"
+}

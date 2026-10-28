@@ -1,0 +1,229 @@
+{
+  "status": "PASS",
+  "scope": "source integrity and conservative module scan",
+  "errors": [],
+  "filelists": {
+    "filelist.f": {
+      "packages": [],
+      "includes_checked": [],
+      "source_count": 10,
+      "module_count": 10,
+      "modules": {
+        "arbiter": {
+          "file": "rtl/vendor/verilog_axi/arbiter.v",
+          "instantiates": [
+            "priority_encoder"
+          ]
+        },
+        "axi4_interconnect_4x4": {
+          "file": "rtl/axi4_interconnect_4x4.sv",
+          "instantiates": [
+            "axi_crossbar"
+          ]
+        },
+        "axi_crossbar": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar.v",
+          "instantiates": [
+            "axi_crossbar_rd",
+            "axi_crossbar_wr"
+          ]
+        },
+        "axi_crossbar_addr": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar_addr.v",
+          "instantiates": []
+        },
+        "axi_crossbar_rd": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar_rd.v",
+          "instantiates": [
+            "arbiter",
+            "axi_crossbar_addr",
+            "axi_register_rd"
+          ]
+        },
+        "axi_crossbar_wr": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar_wr.v",
+          "instantiates": [
+            "arbiter",
+            "axi_crossbar_addr",
+            "axi_register_wr",
+            "axi_write_owner_table"
+          ]
+        },
+        "axi_register_rd": {
+          "file": "rtl/vendor/verilog_axi/axi_register_rd.v",
+          "instantiates": []
+        },
+        "axi_register_wr": {
+          "file": "rtl/vendor/verilog_axi/axi_register_wr.v",
+          "instantiates": []
+        },
+        "axi_write_owner_table": {
+          "file": "rtl/axi_write_owner_table.sv",
+          "instantiates": []
+        },
+        "priority_encoder": {
+          "file": "rtl/vendor/verilog_axi/priority_encoder.v",
+          "instantiates": []
+        }
+      }
+    },
+    "soc_project/filelist.f": {
+      "packages": [
+        "axi_pkg",
+        "soc_address_map_pkg"
+      ],
+      "includes_checked": [],
+      "source_count": 16,
+      "module_count": 14,
+      "modules": {
+        "arbiter": {
+          "file": "rtl/vendor/verilog_axi/arbiter.v",
+          "instantiates": [
+            "priority_encoder"
+          ]
+        },
+        "axi4_interconnect_4x4": {
+          "file": "rtl/axi4_interconnect_4x4.sv",
+          "instantiates": [
+            "axi_crossbar"
+          ]
+        },
+        "axi4_legacy_id_adapter": {
+          "file": "soc_project/axi/rtl/axi4_legacy_id_adapter.sv",
+          "instantiates": []
+        },
+        "axi4_struct_crossbar": {
+          "file": "soc_project/axi/rtl/axi4_struct_crossbar.sv",
+          "instantiates": [
+            "axi4_interconnect_4x4"
+          ]
+        },
+        "axi_crossbar": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar.v",
+          "instantiates": [
+            "axi_crossbar_rd",
+            "axi_crossbar_wr"
+          ]
+        },
+        "axi_crossbar_addr": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar_addr.v",
+          "instantiates": []
+        },
+        "axi_crossbar_rd": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar_rd.v",
+          "instantiates": [
+            "arbiter",
+            "axi_crossbar_addr",
+            "axi_register_rd"
+          ]
+        },
+        "axi_crossbar_wr": {
+          "file": "rtl/vendor/verilog_axi/axi_crossbar_wr.v",
+          "instantiates": [
+            "arbiter",
+            "axi_crossbar_addr",
+            "axi_register_wr",
+            "axi_write_owner_table"
+          ]
+        },
+        "axi_register_rd": {
+          "file": "rtl/vendor/verilog_axi/axi_register_rd.v",
+          "instantiates": []
+        },
+        "axi_register_wr": {
+          "file": "rtl/vendor/verilog_axi/axi_register_wr.v",
+          "instantiates": []
+        },
+        "axi_write_owner_table": {
+          "file": "rtl/axi_write_owner_table.sv",
+          "instantiates": []
+        },
+        "priority_encoder": {
+          "file": "rtl/vendor/verilog_axi/priority_encoder.v",
+          "instantiates": []
+        },
+        "soc_axi4_legacy_subsystem": {
+          "file": "soc_project/soc_top/rtl/soc_axi4_legacy_subsystem.sv",
+          "instantiates": [
+            "axi4_legacy_id_adapter",
+            "soc_axi4_subsystem"
+          ]
+        },
+        "soc_axi4_subsystem": {
+          "file": "soc_project/soc_top/rtl/soc_axi4_subsystem.sv",
+          "instantiates": [
+            "axi4_struct_crossbar"
+          ]
+        }
+      }
+    }
+  },
+  "vendor_files": [
+    {
+      "path": "rtl/vendor/verilog_axi/arbiter.v",
+      "sha256": "a001507c82843e36e133dea75491fc044f56660fac0aff0127cf3afec7f927e0",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar.v",
+      "sha256": "372942b6676159ce6bc7ef6ab60612abc0a091d4d2231e81ff8f47b1b834a8b5",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar_addr.v",
+      "sha256": "9ec313281183408687084c4013976ea13544688412b64b6f7386fd604ad3f59d",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar_rd.v",
+      "sha256": "a484cdc39cdf43b31c8187733690e17d09258889419bf1d12ed2cfa57237a864",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_crossbar_wr.v",
+      "sha256": "2ea59eaee1a4d7d6e5822bbb641c60d0babeb0a17ffe710314cd738c9a449007",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_register_rd.v",
+      "sha256": "350df4fe565b969b3b650be4a09ab0c05eb5b425802efdc0cab24bb531e263b8",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/axi_register_wr.v",
+      "sha256": "d3ae2d2ebbf0c969cfb4b5218e2faf403cb84132ff301db4fa1d70c69017e3f3",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/COPYING",
+      "sha256": "ba81481b2d63a33e0dce336d9e736130709549feeaf6cd424b34beba712baa50",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/priority_encoder.v",
+      "sha256": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    },
+    {
+      "path": "rtl/vendor/verilog_axi/UPSTREAM_README.md",
+      "sha256": "99499ca09430eff2c4aca5ed472759e4090bf51c1dcef5e07b880f9a11fc3a61",
+      "packaged_hash": "PASS",
+      "upstream_hash": "PASS"
+    }
+  ],
+  "vendor_patch_replay": "PASS",
+  "original_zip": {
+    "sha256": "531a405ab48a729d661f2c56c76cceb82c62b7eab5471c3d8243b291ed0e89b0",
+    "manifest_entries_checked": 65,
+    "status": "PASS"
+  }
+}

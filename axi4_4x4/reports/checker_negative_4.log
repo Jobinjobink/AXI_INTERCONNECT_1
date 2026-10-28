@@ -1,0 +1,2 @@
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\compile_checker.preprocessed.sv:166: tb_checker_negative.dut B without completed AW/W for ID 0
+       Time: 55000  Scope: tb_checker_negative.dut

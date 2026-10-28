@@ -1,0 +1,81 @@
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_axi4_interconnect.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+DBG n=0 rst=0 mav=0000 mar=0000 sawv=0000 sawr=0000 mwv=0000 swv=0000 own=0000 areg=0
+DBG n=1 rst=0 mav=0000 mar=0000 sawv=0000 sawr=0000 mwv=0000 swv=0000 own=0000 areg=0
+DBG n=2 rst=0 mav=0000 mar=0000 sawv=0000 sawr=0000 mwv=0000 swv=0000 own=0000 areg=0
+DBG n=3 rst=0 mav=0000 mar=0000 sawv=0000 sawr=0000 mwv=0000 swv=0000 own=0000 areg=0
+DBG n=4 rst=0 mav=0000 mar=0000 sawv=0000 sawr=0000 mwv=0000 swv=0000 own=0000 areg=0
+DBG n=5 rst=0 mav=0000 mar=0000 sawv=0000 sawr=0000 mwv=0000 swv=0000 own=0000 areg=0
+DBG n=6 rst=1 mav=0000 mar=0000 sawv=0000 sawr=0000 mwv=0000 swv=0000 own=0000 areg=0
+DBG n=7 rst=1 mav=0000 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=0000 areg=x
+DBG n=8 rst=1 mav=0000 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=0000 areg=x
+DBG n=9 rst=1 mav=0000 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=0000 areg=x
+TEST four independent targets, colliding source IDs
+DBG n=10 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=0000 areg=x
+DBG n=11 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=0000 areg=x
+DBG n=12 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=0000 areg=x
+DBG n=13 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=14 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=15 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=16 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=17 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=18 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=19 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=20 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=21 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=22 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=23 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=24 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=25 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=26 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=27 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=28 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=29 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=30 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+DBG n=31 rst=1 mav=1111 mar=0000 sawv=xxxx sawr=xxxx mwv=0000 swv=xxxx own=1111 areg=x
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\debug_compile.preprocessed.sv:4524: AW handshake timeout master=3
+       Time: 100105000  Scope: tb_axi4_interconnect.send_aw
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\debug_compile.preprocessed.sv:4524: AW handshake timeout master=2
+       Time: 100105000  Scope: tb_axi4_interconnect.send_aw
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\debug_compile.preprocessed.sv:4524: AW handshake timeout master=1
+       Time: 100105000  Scope: tb_axi4_interconnect.send_aw
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\debug_compile.preprocessed.sv:4524: AW handshake timeout master=0
+       Time: 100105000  Scope: tb_axi4_interconnect.send_aw

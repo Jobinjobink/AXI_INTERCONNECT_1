@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks": [
+    "path escape",
+    "missing source",
+    "recursive filelist",
+    "unresolved parameterized module",
+    "unresolved plain module",
+    "duplicate module",
+    "strict patch positive control",
+    "patch context mismatch",
+    "patch line-count mismatch"
+  ],
+  "count": 9,
+  "purpose": "Audit utility negative controls; not HDL behavior tests."
+}

@@ -1,0 +1,67 @@
+{
+  "old_uploaded_patch": "PASS",
+  "reason": "Original patch exactly reproduces all original uploaded vendor files as LF-normalized text.",
+  "corrected_patch": "PASS",
+  "normalized_text_comparisons": [
+    [
+      "arbiter.v",
+      true,
+      5027,
+      5027
+    ],
+    [
+      "axi_crossbar.v",
+      false,
+      15024,
+      15196
+    ],
+    [
+      "axi_crossbar_addr.v",
+      false,
+      15775,
+      15785
+    ],
+    [
+      "axi_crossbar_rd.v",
+      false,
+      23694,
+      24286
+    ],
+    [
+      "axi_crossbar_wr.v",
+      false,
+      28234,
+      29537
+    ],
+    [
+      "axi_register_rd.v",
+      false,
+      18905,
+      20122
+    ],
+    [
+      "axi_register_wr.v",
+      false,
+      24069,
+      25893
+    ],
+    [
+      "COPYING",
+      true,
+      1057,
+      1057
+    ],
+    [
+      "priority_encoder.v",
+      true,
+      3253,
+      3253
+    ],
+    [
+      "UPSTREAM_README.md",
+      true,
+      20806,
+      20806
+    ]
+  ]
+}

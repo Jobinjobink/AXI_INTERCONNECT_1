@@ -1,0 +1,9 @@
+# Requires Yosys with the slang SystemVerilog frontend (OSS CAD Suite).
+# Packed-array wrapper ports are intentionally retained from the Mini-SoC.
+read_slang --ignore-initial --top axi4_interconnect_4x4 -D SYNTHESIS -f filelist.f
+hierarchy -check -top axi4_interconnect_4x4
+proc
+opt
+check -assert
+stat
+write_json build/axi4_interconnect_4x4.json

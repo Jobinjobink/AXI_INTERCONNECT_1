@@ -1,0 +1,217 @@
+C:\Users\Admin\Documents\Codex\2026-10-25\and-now-u-have-the-task\work\iverilog_stable\app\bin\iverilog.exe: IVERILOG_ICONFIG=C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_soc_axi4_subsystem.iconfig
+C:\Users\Admin\Documents\Codex\2026-10-25\and-now-u-have-the-task\work\iverilog_stable\app\bin\iverilog.exe: IVERILOG_ICONFIG=C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_soc_axi4_legacy_subsystem.iconfig
+C:\Users\Admin\Documents\Codex\2026-10-25\and-now-u-have-the-task\work\iverilog_stable\app\bin\iverilog.exe: IVERILOG_ICONFIG=C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_tb_soc_axi4_subsystem.iconfig
+ion for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.native_system.system_0.dut.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_wr_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_soc_axi4_subsystem.legacy_system.system_1.dut.fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+SOC TEST PASS: native and legacy 4x4 structs; 32 writes, 32 reads, 128 data beats each direction
+C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_tb_soc_axi4_subsystem.preprocessed.sv:4539: $finish called at 1440000 (1ps)
+C:\Users\Admin\Documents\Codex\2026-10-25\and-now-u-have-the-task\work\iverilog_stable\app\bin\iverilog.exe: IVERILOG_ICONFIG=C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_tb_legacy_id_adapter.iconfig
+SOC TEST PASS: legacy adapter 41 concurrent R/W burst pairs; all ID bits and route owners; stalls, SLVERR, reset recovery
+C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\soc_compile_tb_legacy_id_adapter.preprocessed.sv:4620: $finish called at 5401000 (1ps)
+wr_inst.m_ifaces[2].reg_inst.genblk2.temp_m_axi_wvalid_next, Q = \fabric.fabric.core.crossbar.axi_crossbar_wr_inst.m_ifaces[2].reg_inst.genblk2.temp_m_axi_wvalid_reg).
+Adding EN signal on $auto$ff.cc:337:slice$8741 ($sdff) from module soc_axi4_legacy_subsystem (D = \fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].reg_inst.genblk2.temp_s_axi_rvalid_next, Q = \fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].reg_inst.genblk2.temp_s_axi_rvalid_reg).
+Adding EN signal on $auto$ff.cc:337:slice$8746 ($sdff) from module soc_axi4_legacy_subsystem (D = \fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].reg_inst.genblk2.s_axi_rvalid_next, Q = \fabric.fabric.core.crossbar.axi_crossbar_rd_inst.s_ifaces[1].reg_inst.genblk2.s_axi_rvalid_reg).
+Adding EN signal on $auto$ff.cc:337:slice$8652 ($sdff) from module soc_axi4_legacy_subsystem (D = \fabric.fabric.core.crossbar.axi_crossbar_wr_inst.m_ifaces[3].reg_inst.genblk2.m_axi_wvalid_next, Q = \fabric.fabric.core.crossbar.axi_crossbar_wr_inst.m_ifaces[3].reg_inst.genblk2.m_axi_wvalid_reg).
+Adding EN signal on $auto$ff.cc:337:slice$8656 ($sdff) from module soc_axi4_legacy_subsystem (D = \fabric.fabric.core.crossbar.axi_crossbar_wr_inst.m_ifaces[3].reg_inst.genblk2.temp_m_axi_wvalid_next, Q = \fabric.fabric.core.crossbar.axi_crossbar_wr_inst.m_ifaces[3].reg_inst.genblk2.temp_m_axi_wvalid_reg).
+
+4.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_axi4_legacy_subsystem..
+Removed 0 unused cells and 55 unused wires.
+<suppressed ~1 debug messages>
+
+4.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_axi4_legacy_subsystem.
+<suppressed ~16 debug messages>
+
+4.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_axi4_legacy_subsystem..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1578 debug messages>
+
+4.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_axi4_legacy_subsystem.
+Performed a total of 0 changes.
+
+4.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_axi4_legacy_subsystem'.
+Computing hashes of 4410 cells of `\soc_axi4_legacy_subsystem'.
+Finding duplicate cells in `\soc_axi4_legacy_subsystem'.
+Computing hashes of 4402 cells of `\soc_axi4_legacy_subsystem'.
+Finding duplicate cells in `\soc_axi4_legacy_subsystem'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+4.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_axi4_legacy_subsystem..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+4.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_axi4_legacy_subsystem.
+
+4.30. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.31. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \soc_axi4_legacy_subsystem..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1578 debug messages>
+
+4.32. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \soc_axi4_legacy_subsystem.
+Performed a total of 0 changes.
+
+4.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\soc_axi4_legacy_subsystem'.
+Computing hashes of 4402 cells of `\soc_axi4_legacy_subsystem'.
+Finding duplicate cells in `\soc_axi4_legacy_subsystem'.
+Removed a total of 0 cells.
+
+4.34. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \soc_axi4_legacy_subsystem..
+
+4.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module soc_axi4_legacy_subsystem.
+
+4.37. Finished fast OPT passes. (There is nothing left to do.)
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module soc_axi4_legacy_subsystem...
+Found and reported 0 problems.
+
+6. Printing statistics.
+
+=== soc_axi4_legacy_subsystem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     5593 wires
+    43204 wire bits
+     2851 public wires
+    31335 public wire bits
+       18 ports
+     1842 port bits
+       32 memories
+      480 memory bits
+     4402 cells
+      104   $add
+       48   $and
+       44   $bmux
+       20   $dff
+      156   $dffe
+      168   $eq
+       16   $ge
+        4   $gt
+      956   $logic_and
+      504   $logic_not
+       88   $logic_or
+       32   $lt
+      128   $memrd_v2
+      192   $memwr_v2
+       16   $mul
+     1033   $mux
+       24   $ne
+       49   $not
+       32   $or
+        8   $pmux
+       60   $reduce_and
+       76   $reduce_bool
+      100   $reduce_or
+       84   $sdff
+      200   $sdffe
+       72   $shiftx
+      104   $shl
+       32   $shr
+       52   $sub
+
+7. Executing JSON backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: b43db3c1a5
+Yosys 0.69+158 (git sha1 a1a0ad7d4-dirty, Release, GNU /usr/bin/x86_64-w64-mingw32-g++ 15.2.1)
+Time spent: 4% 8x opt_expr (0 sec), 4% 6x opt_merge (0 sec), ...
+SOC CHECKS COMPLETE

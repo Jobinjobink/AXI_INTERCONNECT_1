@@ -1,0 +1,2 @@
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\compile_checker.preprocessed.sv:111: tb_checker_negative.dut.check_address burst crosses 4KB boundary or address space end
+       Time: 45000  Scope: tb_checker_negative.dut.check_address

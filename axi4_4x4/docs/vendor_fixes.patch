@@ -1,0 +1,421 @@
+--- a/rtl/vendor/verilog_axi/axi_crossbar.v
++++ b/rtl/vendor/verilog_axi/axi_crossbar.v
+@@ -249,7 +249,10 @@
+     .M_SECURE(M_SECURE),
+     .S_AW_REG_TYPE(S_AW_REG_TYPE),
+     .S_W_REG_TYPE (S_W_REG_TYPE),
+-    .S_B_REG_TYPE (S_B_REG_TYPE)
++    .S_B_REG_TYPE (S_B_REG_TYPE),
++    .M_AW_REG_TYPE(M_AW_REG_TYPE),
++    .M_W_REG_TYPE (M_W_REG_TYPE),
++    .M_B_REG_TYPE (M_B_REG_TYPE)
+ )
+ axi_crossbar_wr_inst (
+     .clk(clk),
+@@ -332,7 +335,9 @@
+     .M_ISSUE(M_ISSUE),
+     .M_SECURE(M_SECURE),
+     .S_AR_REG_TYPE(S_AR_REG_TYPE),
+-    .S_R_REG_TYPE (S_R_REG_TYPE)
++    .S_R_REG_TYPE (S_R_REG_TYPE),
++    .M_AR_REG_TYPE(M_AR_REG_TYPE),
++    .M_R_REG_TYPE (M_R_REG_TYPE)
+ )
+ axi_crossbar_rd_inst (
+     .clk(clk),
+--- a/rtl/vendor/verilog_axi/axi_crossbar_addr.v
++++ b/rtl/vendor/verilog_axi/axi_crossbar_addr.v
+@@ -268,6 +268,8 @@
+ reg [ID_WIDTH-1:0] thread_id_reg[S_INT_THREADS-1:0];
+ reg [CL_M_COUNT-1:0] thread_m_reg[S_INT_THREADS-1:0];
+ reg [3:0] thread_region_reg[S_INT_THREADS-1:0];
++// Local patch: decode errors are a virtual destination with normal credits.
++reg thread_decerr_reg[S_INT_THREADS-1:0];
+ reg [$clog2(S_ACCEPT+1)-1:0] thread_count_reg[S_INT_THREADS-1:0];
+ 
+ wire [S_INT_THREADS-1:0] thread_active;
+@@ -287,7 +289,9 @@
+ 
+         assign thread_active[n] = thread_count_reg[n] != 0;
+         assign thread_match[n] = thread_active[n] && thread_id_reg[n] == s_axi_aid;
+-        assign thread_match_dest[n] = thread_match[n] && thread_m_reg[n] == m_select_next && (M_REGIONS < 2 || thread_region_reg[n] == m_axi_aregion_next);
++        assign thread_match_dest[n] = thread_match[n] && thread_decerr_reg[n] == m_decerr_next &&
++            (m_decerr_next || (thread_m_reg[n] == m_select_next &&
++            (M_REGIONS < 2 || thread_region_reg[n] == m_axi_aregion_next)));
+         assign thread_cpl_match[n] = thread_active[n] && thread_id_reg[n] == s_cpl_id;
+         assign thread_trans_start[n] = (thread_match[n] || (!thread_active[n] && !thread_match && !(thread_trans_start & ({S_INT_THREADS{1'b1}} >> (S_INT_THREADS-n))))) && trans_start;
+         assign thread_trans_complete[n] = thread_cpl_match[n] && trans_complete;
+@@ -307,6 +311,7 @@
+                 thread_id_reg[n] <= s_axi_aid;
+                 thread_m_reg[n] <= m_select_next;
+                 thread_region_reg[n] <= m_axi_aregion_next;
++                thread_decerr_reg[n] <= m_decerr_next;
+             end
+         end
+     end
+@@ -345,27 +350,19 @@
+                     end
+                 end
+ 
+-                if (match) begin
+-                    // address decode successful
+-                    if (!trans_limit && (thread_match_dest || (!(&thread_active) && !thread_match))) begin
+-                        // transaction limit not reached
+-                        m_axi_avalid_next = 1'b1;
+-                        m_decerr_next = 1'b0;
+-                        m_wc_valid_next = WC_OUTPUT;
+-                        m_rc_valid_next = 1'b0;
+-                        trans_start = 1'b1;
+-                        state_next = STATE_DECODE;
+-                    end else begin
+-                        // transaction limit reached; block in idle
+-                        state_next = STATE_IDLE;
+-                    end
++                // Local patch: error responses participate in ID ordering and
++                // outstanding limits just like a real target. Otherwise an
++                // unmapped request can overtake an older same-ID request and
++                // its completion can underflow the normal transaction count.
++                m_decerr_next = !match;
++                if (!trans_limit && (thread_match_dest || (!(&thread_active) && !thread_match))) begin
++                    m_axi_avalid_next = match;
++                    m_wc_valid_next = WC_OUTPUT;
++                    m_rc_valid_next = !match;
++                    trans_start = 1'b1;
++                    state_next = STATE_DECODE;
+                 end else begin
+-                    // decode error
+-                    m_axi_avalid_next = 1'b0;
+-                    m_decerr_next = 1'b1;
+-                    m_wc_valid_next = WC_OUTPUT;
+-                    m_rc_valid_next = 1'b1;
+-                    state_next = STATE_DECODE;
++                    state_next = STATE_IDLE;
+                 end
+             end else begin
+                 state_next = STATE_IDLE;
+--- a/rtl/vendor/verilog_axi/axi_crossbar_rd.v
++++ b/rtl/vendor/verilog_axi/axi_crossbar_rd.v
+@@ -321,6 +321,10 @@
+             decerr_len_reg <= decerr_len_next;
+         end
+ 
++        // Local patch: arbitrate each R beat. Holding a target until RLAST can
++        // deadlock when two targets interleave beats to opposite masters.
++        // The blocking arbiter still holds selection while VALID is stalled.
++        // Transaction completion/credit logic below remains RLAST-qualified.
+         // read response arbitration
+         wire [M_COUNT_P1-1:0] r_request;
+         wire [M_COUNT_P1-1:0] r_acknowledge;
+@@ -351,19 +355,24 @@
+         wire [1:0]             m_axi_rresp_mux  = {2'b11, int_m_axi_rresp} >> r_grant_encoded*2;
+         wire                   m_axi_rlast_mux  = {decerr_m_axi_rlast_reg, int_m_axi_rlast} >> r_grant_encoded;
+         wire [RUSER_WIDTH-1:0] m_axi_ruser_mux  = {{RUSER_WIDTH{1'b0}}, int_m_axi_ruser} >> r_grant_encoded*RUSER_WIDTH;
+-        wire                   m_axi_rvalid_mux = ({decerr_m_axi_rvalid_reg, int_m_axi_rvalid} >> r_grant_encoded) & r_grant_valid;
++        // Local patch: a held burst grant does not mean every slave beat
++        // belongs to this source. A slave may interleave IDs from masters.
++        wire [M_COUNT_P1-1:0] r_valid_for_source;
++        wire                   m_axi_rvalid_mux = (r_valid_for_source >> r_grant_encoded) & r_grant_valid;
+         wire                   m_axi_rready_mux;
+ 
+         assign int_axi_rready[m*M_COUNT +: M_COUNT] = (r_grant_valid && m_axi_rready_mux) << r_grant_encoded;
+         assign decerr_m_axi_rready = (r_grant_valid && m_axi_rready_mux) && (r_grant_encoded == M_COUNT_P1-1);
+ 
+         for (n = 0; n < M_COUNT; n = n + 1) begin
++            assign r_valid_for_source[n] = int_axi_rvalid[n*S_COUNT+m];
+             assign r_request[n] = int_axi_rvalid[n*S_COUNT+m] && !r_grant[n];
+-            assign r_acknowledge[n] = r_grant[n] && int_axi_rvalid[n*S_COUNT+m] && m_axi_rlast_mux && m_axi_rready_mux;
++            assign r_acknowledge[n] = r_grant[n] && int_axi_rvalid[n*S_COUNT+m] && m_axi_rready_mux;
+         end
+ 
++        assign r_valid_for_source[M_COUNT_P1-1] = decerr_m_axi_rvalid_reg;
+         assign r_request[M_COUNT_P1-1] = decerr_m_axi_rvalid_reg && !r_grant[M_COUNT_P1-1];
+-        assign r_acknowledge[M_COUNT_P1-1] = r_grant[M_COUNT_P1-1] && decerr_m_axi_rvalid_reg && decerr_m_axi_rlast_reg && m_axi_rready_mux;
++        assign r_acknowledge[M_COUNT_P1-1] = r_grant[M_COUNT_P1-1] && decerr_m_axi_rvalid_reg && m_axi_rready_mux;
+ 
+         assign s_cpl_id = m_axi_rid_mux;
+         assign s_cpl_valid = m_axi_rvalid_mux && m_axi_rready_mux && m_axi_rlast_mux;
+@@ -496,7 +505,7 @@
+         assign trans_start = s_axi_arvalid_mux && s_axi_arready_mux && a_grant_valid;
+ 
+         // read response forwarding
+-        wire [CL_S_COUNT-1:0] r_select = m_axi_rid[n*M_ID_WIDTH +: M_ID_WIDTH] >> S_ID_WIDTH;
++        wire [CL_S_COUNT-1:0] r_select = int_m_axi_rid[n*M_ID_WIDTH +: M_ID_WIDTH] >> S_ID_WIDTH;
+ 
+         assign int_axi_rvalid[n*S_COUNT +: S_COUNT] = int_m_axi_rvalid[n] << r_select;
+         assign int_m_axi_rready[n] = int_axi_rready[r_select*M_COUNT+n];
+--- a/rtl/vendor/verilog_axi/axi_crossbar_wr.v
++++ b/rtl/vendor/verilog_axi/axi_crossbar_wr.v
+@@ -311,14 +311,16 @@
+         reg w_drop_reg = 1'b0, w_drop_next;
+         reg w_select_valid_reg = 1'b0, w_select_valid_next;
+ 
+-        assign m_wc_ready = !w_select_valid_reg;
++        // Error WC and RC commands are accepted atomically. If the previous
++        // error B is blocked, its successor must not consume W data early.
++        assign m_wc_ready = !w_select_valid_reg && (!m_wc_decerr || m_rc_ready);
+ 
+         always @* begin
+             w_select_next = w_select_reg;
+             w_drop_next = w_drop_reg && !(int_s_axi_wvalid[m] && int_s_axi_wready[m] && int_s_axi_wlast[m]);
+             w_select_valid_next = w_select_valid_reg && !(int_s_axi_wvalid[m] && int_s_axi_wready[m] && int_s_axi_wlast[m]);
+ 
+-            if (m_wc_valid && !w_select_valid_reg) begin
++            if (m_wc_valid && m_wc_ready) begin
+                 w_select_next = m_wc_select;
+                 w_drop_next = m_wc_decerr;
+                 w_select_valid_next = m_wc_valid;
+@@ -338,14 +340,16 @@
+ 
+         // write data forwarding
+         assign int_axi_wvalid[m*M_COUNT +: M_COUNT] = (int_s_axi_wvalid[m] && w_select_valid_reg && !w_drop_reg) << w_select_reg;
+-        assign int_s_axi_wready[m] = int_axi_wready[w_select_reg*S_COUNT+m] || w_drop_reg;
++        assign int_s_axi_wready[m] = w_select_valid_reg && (int_axi_wready[w_select_reg*S_COUNT+m] || w_drop_reg);
+ 
+         // decode error handling
+         reg [S_ID_WIDTH-1:0]  decerr_m_axi_bid_reg = {S_ID_WIDTH{1'b0}}, decerr_m_axi_bid_next;
+         reg                   decerr_m_axi_bvalid_reg = 1'b0, decerr_m_axi_bvalid_next;
+         wire                  decerr_m_axi_bready;
+ 
+-        assign m_rc_ready = !decerr_m_axi_bvalid_reg;
++        // Local patch: keep the error command until all its W data is drained.
++        reg decerr_pending_reg = 1'b0;
++        assign m_rc_ready = !w_select_valid_reg && !decerr_pending_reg && !decerr_m_axi_bvalid_reg;
+ 
+         always @* begin
+             decerr_m_axi_bid_next = decerr_m_axi_bid_reg;
+@@ -357,14 +361,24 @@
+                 end
+             end else if (m_rc_valid && m_rc_ready) begin
+                 decerr_m_axi_bid_next = int_s_axi_awid[m*S_ID_WIDTH +: S_ID_WIDTH];
++            end
++            // AXI4 B must follow the last W handshake, even for DECERR.
++            if (decerr_pending_reg && w_drop_reg && w_select_valid_reg &&
++                    int_s_axi_wvalid[m] && int_s_axi_wready[m] && int_s_axi_wlast[m]) begin
+                 decerr_m_axi_bvalid_next = 1'b1;
+             end
+         end
+ 
+         always @(posedge clk) begin
+             if (rst) begin
++                decerr_pending_reg <= 1'b0;
+                 decerr_m_axi_bvalid_reg <= 1'b0;
+             end else begin
++                if (m_rc_valid && m_rc_ready)
++                    decerr_pending_reg <= 1'b1;
++                if (decerr_pending_reg && w_drop_reg && w_select_valid_reg &&
++                        int_s_axi_wvalid[m] && int_s_axi_wready[m] && int_s_axi_wlast[m])
++                    decerr_pending_reg <= 1'b0;
+                 decerr_m_axi_bvalid_reg <= decerr_m_axi_bvalid_next;
+             end
+ 
+@@ -507,8 +521,9 @@
+         end
+ 
+         // address arbitration
+-        reg [CL_S_COUNT-1:0] w_select_reg = 0, w_select_next;
+-        reg w_select_valid_reg = 1'b0, w_select_valid_next;
++        wire [CL_S_COUNT-1:0] w_select_reg;
++        wire w_select_valid_reg;
++        reg w_select_valid_next;
+         reg w_select_new_reg = 1'b0, w_select_new_next;
+ 
+         wire [S_COUNT-1:0] a_request;
+@@ -568,14 +583,21 @@
+ 
+         assign int_axi_wready[n*S_COUNT +: S_COUNT] = (w_select_valid_reg && s_axi_wready_mux) << w_select_reg;
+ 
+-        // write data routing
++        // Mini-SoC owner table replaces the original per-target owner/valid
++        // registers. Allocate before AWREADY: a target may wait for WVALID.
++        axi_write_owner_table #(.MW(CL_S_COUNT)) owner_table_inst (
++            .clk(clk), .rst_n(!rst),
++            .allocate(a_grant_valid && !w_select_valid_reg && w_select_new_reg),
++            .release_owner(s_axi_wvalid_mux && s_axi_wready_mux && s_axi_wlast_mux),
++            .master(a_grant_encoded), .valid(w_select_valid_reg), .owner(w_select_reg)
++        );
++
++        // Grant reuse protection and combinational admission remain unchanged.
+         always @* begin
+-            w_select_next = w_select_reg;
+             w_select_valid_next = w_select_valid_reg && !(s_axi_wvalid_mux && s_axi_wready_mux && s_axi_wlast_mux);
+             w_select_new_next = w_select_new_reg || !a_grant_valid || a_acknowledge;
+ 
+             if (a_grant_valid && !w_select_valid_reg && w_select_new_reg) begin
+-                w_select_next = a_grant_encoded;
+                 w_select_valid_next = a_grant_valid;
+                 w_select_new_next = 1'b0;
+             end
+@@ -583,18 +605,14 @@
+ 
+         always @(posedge clk) begin
+             if (rst) begin
+-                w_select_valid_reg <= 1'b0;
+                 w_select_new_reg <= 1'b1;
+             end else begin
+-                w_select_valid_reg <= w_select_valid_next;
+                 w_select_new_reg <= w_select_new_next;
+             end
+-
+-            w_select_reg <= w_select_next;
+         end
+ 
+         // write response forwarding
+-        wire [CL_S_COUNT-1:0] b_select = m_axi_bid[n*M_ID_WIDTH +: M_ID_WIDTH] >> S_ID_WIDTH;
++        wire [CL_S_COUNT-1:0] b_select = int_m_axi_bid[n*M_ID_WIDTH +: M_ID_WIDTH] >> S_ID_WIDTH;
+ 
+         assign int_axi_bvalid[n*S_COUNT +: S_COUNT] = int_m_axi_bvalid[n] << b_select;
+         assign int_m_axi_bready[n] = int_axi_bready[b_select*M_COUNT+n];
+@@ -676,3 +694,4 @@
+ endmodule
+ 
+ `resetall
++
+--- a/rtl/vendor/verilog_axi/axi_register_rd.v
++++ b/rtl/vendor/verilog_axi/axi_register_rd.v
+@@ -194,6 +194,14 @@
+         temp_m_axi_arvalid_next = 1'b0;
+         store_axi_ar_temp_to_output = 1'b1;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        m_axi_arvalid_next = 1'b0;
++        temp_m_axi_arvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+@@ -301,6 +309,13 @@
+     end else if (m_axi_arready) begin
+         m_axi_arvalid_next = 1'b0;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        m_axi_arvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+@@ -412,6 +427,14 @@
+         temp_s_axi_rvalid_next = 1'b0;
+         store_axi_r_temp_to_output = 1'b1;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        s_axi_rvalid_next = 1'b0;
++        temp_s_axi_rvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+@@ -489,6 +512,13 @@
+     end else if (s_axi_rready) begin
+         s_axi_rvalid_next = 1'b0;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        s_axi_rvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+--- a/rtl/vendor/verilog_axi/axi_register_wr.v
++++ b/rtl/vendor/verilog_axi/axi_register_wr.v
+@@ -209,6 +209,14 @@
+         temp_m_axi_awvalid_next = 1'b0;
+         store_axi_aw_temp_to_output = 1'b1;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        m_axi_awvalid_next = 1'b0;
++        temp_m_axi_awvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+@@ -316,6 +324,13 @@
+     end else if (m_axi_awready) begin
+         m_axi_awvalid_next = 1'b0;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        m_axi_awvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+@@ -424,6 +439,14 @@
+         temp_m_axi_wvalid_next = 1'b0;
+         store_axi_w_temp_to_output = 1'b1;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        m_axi_wvalid_next = 1'b0;
++        temp_m_axi_wvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+@@ -494,6 +517,13 @@
+         m_axi_wvalid_next = s_axi_wvalid;
+         store_axi_w_input_to_output = 1'b1;
+     end else if (m_axi_wready) begin
++        m_axi_wvalid_next = 1'b0;
++    end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
+         m_axi_wvalid_next = 1'b0;
+     end
+ end
+@@ -587,6 +617,14 @@
+         temp_s_axi_bvalid_next = 1'b0;
+         store_axi_b_temp_to_output = 1'b1;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        s_axi_bvalid_next = 1'b0;
++        temp_s_axi_bvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin
+@@ -654,6 +692,13 @@
+     end else if (s_axi_bready) begin
+         s_axi_bvalid_next = 1'b0;
+     end
++
++    // Local patch: reset is also a combinational sensitivity event.
++    // READY may remain low throughout reset; never clock an unevaluated
++    // valid_next into the first post-reset cycle in an event-driven simulator.
++    if (rst) begin
++        s_axi_bvalid_next = 1'b0;
++    end
+ end
+ 
+ always @(posedge clk) begin

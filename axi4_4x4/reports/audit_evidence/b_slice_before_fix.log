@@ -1,0 +1,45 @@
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_wr_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[0].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[1].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[2].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+Addressing configuration for axi_crossbar_addr instance tb_b_slice.dut.crossbar.axi_crossbar_rd_inst.s_ifaces[3].addr_inst
+ 0 ( 0): 00000000 / 28 -- 00000000-0fffffff
+ 1 ( 0): 10000000 / 16 -- 10000000-1000ffff
+ 2 ( 0): 20000000 / 16 -- 20000000-2000ffff
+ 3 ( 0): 30000000 / 16 -- 30000000-3000ffff
+TEST four independent targets, colliding source IDs
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\b_slice_compile.preprocessed.sv:4019: Unexpected B master=0 ID=1
+       Time: 535000  Scope: tb_b_slice
+FATAL: C:\Users\Admin\Documents\Codex\2026-10-25\referenced-chatgpt-conversation-this-is-an\work\axi4_4x4\build\b_slice_compile.preprocessed.sv:4581: tb_b_slice.protocol[0].m_check B without completed AW/W for ID 1
+       Time: 535000  Scope: tb_b_slice.protocol[0].m_check

@@ -1,0 +1,266 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-28T05:46:54.964357+00:00",
+  "source_sha256": {
+    "rtl/axi4_interconnect_4x4.sv": "0e720fcf1c8dc295da630232f43b3255be608e702bbc6a25551df068197d93fc",
+    "rtl/axi_write_owner_table.sv": "d57a619b309234ce2d9b3f2f89a7a3017e1c679db4b01c6e5b236575a674126f",
+    "rtl/vendor/verilog_axi/arbiter.v": "a001507c82843e36e133dea75491fc044f56660fac0aff0127cf3afec7f927e0",
+    "rtl/vendor/verilog_axi/axi_crossbar.v": "372942b6676159ce6bc7ef6ab60612abc0a091d4d2231e81ff8f47b1b834a8b5",
+    "rtl/vendor/verilog_axi/axi_crossbar_addr.v": "9ec313281183408687084c4013976ea13544688412b64b6f7386fd604ad3f59d",
+    "rtl/vendor/verilog_axi/axi_crossbar_rd.v": "a484cdc39cdf43b31c8187733690e17d09258889419bf1d12ed2cfa57237a864",
+    "rtl/vendor/verilog_axi/axi_crossbar_wr.v": "2ea59eaee1a4d7d6e5822bbb641c60d0babeb0a17ffe710314cd738c9a449007",
+    "rtl/vendor/verilog_axi/axi_register_rd.v": "350df4fe565b969b3b650be4a09ab0c05eb5b425802efdc0cab24bb531e263b8",
+    "rtl/vendor/verilog_axi/axi_register_wr.v": "d3ae2d2ebbf0c969cfb4b5218e2faf403cb84132ff301db4fa1d70c69017e3f3",
+    "rtl/vendor/verilog_axi/priority_encoder.v": "df28220d95b47df349a72803a9751aad331eb8e1435416e8686d00572a974dd5",
+    "soc_project/axi/README.md": "9754c0e8651de998c0936fcf9198e6a1f4394b2ecd71d305aeae48c0f96ab780",
+    "soc_project/axi/rtl/axi4_legacy_id_adapter.sv": "7244388b29a1af9c42237f6db5fadc078f8d0bf775924f8abf00df49d244e800",
+    "soc_project/axi/rtl/axi4_struct_crossbar.sv": "8f0f2c429f78168c69b5731403e4ccdbe75bc614fa41461e0ab4fd817a710668",
+    "soc_project/common/README.md": "f7a135c50a927992b1a31fd45617461818d303a9cddbf7bf21ddfceeeb879db4",
+    "soc_project/common/rtl/axi_pkg.sv": "d16f29e862cbb51ceaa6235d5e8ee363971ae67c9f8e3b342f17ca7f0b61cbe7",
+    "soc_project/common/rtl/soc_address_map_pkg.sv": "7b46044da8f9d982ad0d454544da19354b91e7e893b68fd2cac0d548e56d2c80",
+    "soc_project/filelist.f": "7c84214c3d601fc2d8d3a49fb956985b7637997581d30d00c61b55597c76d7a4",
+    "soc_project/README.md": "6b03c1acba37018c33542a61accbd69ed9c4fa6f1e0ec056dde7a9e24bb475d2",
+    "soc_project/scripts/run.py": "0fc7c7d39a18cbc641519f357d523587f4e5bfe500d4df6b84d151809b83325b",
+    "soc_project/scripts/synth.ys": "6d637e909611854d033f4ceace3f06d2ad134cd39e9fcd7027172b7068560a3c",
+    "soc_project/soc_top/README.md": "4b693fb09c417c29eb6545bfd3aa122c6622f901fb1450508755eac0a53cf37a",
+    "soc_project/soc_top/rtl/soc_axi4_legacy_subsystem.sv": "c34f6ae140c985933188ac7ac3c72b48082a1c4899d709a4ea276899cf6f8802",
+    "soc_project/soc_top/rtl/soc_axi4_subsystem.sv": "b7d9248b850592ff4e5cd34375f340b5f4ea951aa6391e053cfd00bc1e2c5a07",
+    "soc_project/tb/tb_legacy_id_adapter.sv": "c3d35e27bb42c6416f2ab5b41e87afa877a38c73fcb5c38b3a6cc16873525132",
+    "soc_project/tb/tb_soc_axi4_subsystem.sv": "4eff8cdf5b89df67a4596c0b1aac55d9f007b540cabea805e06e95a2c969314a",
+    "tb/axi4_test_slave.sv": "29010c921d9076c1c586f3d942e556ef1bde78ef2dd66a7e0eb734a526820e4b"
+  },
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "soc_axi4_subsystem",
+        "-o",
+        "build/soc_axi4_subsystem.vvp",
+        "-c",
+        "soc_project/filelist.f"
+      ],
+      "seconds": 1.36,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "soc_axi4_subsystem",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_soc_axi4_subsystem.preprocessed.sv",
+            "-c",
+            "soc_project/filelist.f"
+          ],
+          "seconds": 0.343,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_soc_axi4_subsystem.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_soc_axi4_subsystem.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_soc_axi4_subsystem.preprocessed.sv"
+          ],
+          "seconds": 0.766,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_soc_axi4_subsystem.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\soc_axi4_subsystem.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "soc_axi4_legacy_subsystem",
+        "-o",
+        "build/soc_axi4_legacy_subsystem.vvp",
+        "-c",
+        "soc_project/filelist.f"
+      ],
+      "seconds": 1.656,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "soc_axi4_legacy_subsystem",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_soc_axi4_legacy_subsystem.preprocessed.sv",
+            "-c",
+            "soc_project/filelist.f"
+          ],
+          "seconds": 0.5,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_soc_axi4_legacy_subsystem.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_soc_axi4_legacy_subsystem.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_soc_axi4_legacy_subsystem.preprocessed.sv"
+          ],
+          "seconds": 1.125,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_soc_axi4_legacy_subsystem.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\soc_axi4_legacy_subsystem.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_soc_axi4_subsystem",
+        "-o",
+        "build/tb_soc_axi4_subsystem.vvp",
+        "-c",
+        "soc_project/filelist.f",
+        "soc_project/tb/tb_soc_axi4_subsystem.sv",
+        "tb/axi4_test_slave.sv"
+      ],
+      "seconds": 2.609,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "tb_soc_axi4_subsystem",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_tb_soc_axi4_subsystem.preprocessed.sv",
+            "-c",
+            "soc_project/filelist.f",
+            "soc_project/tb/tb_soc_axi4_subsystem.sv",
+            "tb/axi4_test_slave.sv"
+          ],
+          "seconds": 0.469,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_tb_soc_axi4_subsystem.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_tb_soc_axi4_subsystem.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_tb_soc_axi4_subsystem.preprocessed.sv"
+          ],
+          "seconds": 2.125,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_tb_soc_axi4_subsystem.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\tb_soc_axi4_subsystem.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/tb_soc_axi4_subsystem.vvp"
+      ],
+      "seconds": 3.281,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_legacy_id_adapter",
+        "-o",
+        "build/tb_legacy_id_adapter.vvp",
+        "-c",
+        "soc_project/filelist.f",
+        "soc_project/tb/tb_legacy_id_adapter.sv",
+        "tb/axi4_test_slave.sv"
+      ],
+      "seconds": 0.922,
+      "exit_code": 0,
+      "direct_backend": true,
+      "stages": [
+        {
+          "command": [
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\iverilog.exe",
+            "-E",
+            "-g2012",
+            "-Wall",
+            "-s",
+            "tb_legacy_id_adapter",
+            "-o",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_tb_legacy_id_adapter.preprocessed.sv",
+            "-c",
+            "soc_project/filelist.f",
+            "soc_project/tb/tb_legacy_id_adapter.sv",
+            "tb/axi4_test_slave.sv"
+          ],
+          "seconds": 0.25,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_tb_legacy_id_adapter.preprocess.log"
+        },
+        {
+          "command": [
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\ivl.exe",
+            "-C",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_tb_legacy_id_adapter.backend.config",
+            "-C",
+            "C:\\Users\\Admin\\DOCUME~1\\Codex\\209010~1\\AND-NO~1\\work\\IVERIL~1\\app\\lib\\ivl\\vvp.conf",
+            "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\work\\axi4_4x4\\build\\soc_compile_tb_legacy_id_adapter.preprocessed.sv"
+          ],
+          "seconds": 0.64,
+          "exit_code": 0,
+          "log": "reports\\soc_compile_tb_legacy_id_adapter.backend.log"
+        }
+      ],
+      "artifact_emitted": "build\\tb_legacy_id_adapter.vvp"
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-10-25\\and-now-u-have-the-task\\work\\iverilog_stable\\app\\bin\\vvp.exe",
+        "build/tb_legacy_id_adapter.vvp"
+      ],
+      "seconds": 0.469,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-30\\referenced-chatgpt-conversation-this-is-an-2\\work\\oss-cad-suite\\bin\\yosys.exe",
+        "-s",
+        "soc_project/scripts/synth.ys"
+      ],
+      "seconds": 9.406,
+      "exit_code": 0
+    }
+  ],
+  "simulation": "PASS",
+  "synthesis": "PASS",
+  "finished_utc": "2026-10-28T05:47:16.512172+00:00"
+}
